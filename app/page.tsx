@@ -20,11 +20,10 @@ export default function Home() {
     <div
       style={{
         display: "flex",
-        justifyContent: "center", // 横方向の中央揃え
-        alignItems: "center", // 縦方向の中央揃え
-        height: "100vh", // 画面全体の高さを確保
-        flexDirection: "column", // ボタンを縦に並べる
-        gap: "15px", // 各ボタン間のスペース
+        flexDirection: "column", // 全体のレイアウトは縦方向
+        justifyContent: "center", // 縦方向中央揃え
+        alignItems: "center", // 横方向中央揃え
+        height: "100vh", // 画面全体の高さ
       }}
     >
       <h1
@@ -35,7 +34,13 @@ export default function Home() {
       >
         Welcome to the Auto Create Business Model Canvas
       </h1>
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      <div
+        style={{
+          display: "flex", // ボタンを横並びにする
+          justifyContent: "center", // 横方向中央揃え
+          gap: "15px", // ボタン間のスペース
+        }}
+      >
         <Link href="/home">
           <a style={buttonStyle}>Home</a>
         </Link>
