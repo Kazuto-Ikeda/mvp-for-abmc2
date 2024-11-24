@@ -4,19 +4,42 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* メタデータを追加 */}
-        <title>Auto Create BMC</title>
+        <title>Auto Create Business Model Canvas</title>
         <meta name="description" content="Automatically generate business model canvases with AI." />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        {/* 共通のデザイン（ヘッダー、フッター）を追加可能 */}
-        <header style={{ padding: "10px", background: "#0070f3", color: "white", textAlign: "center" }}>
-          <h1>Auto Create Business Model Canvas</h1>
+        {/* ヘッダー部分 */}
+        <header
+          style={{
+            backgroundColor: "white", // 背景色を白
+            color: "red", // 文字色を赤
+            textAlign: "center",
+            padding: "20px 0",
+            fontFamily: "'Arial', sans-serif",
+            fontWeight: "bold",
+            fontSize: "24px",
+          }}
+        >
+          Auto Create Business Model Canvas
         </header>
+
+        {/* ページコンテンツ */}
         <main>{children}</main>
-        <footer style={{ padding: "10px", background: "#f5f5f5", textAlign: "center" }}>
-          <p>&copy; 2024 Auto Create BMC</p>
+
+        {/* フッター部分 */}
+        <footer
+          style={{
+            backgroundColor: "#f5f5f5",
+            textAlign: "center",
+            padding: "10px 0",
+            marginTop: "20px",
+            fontFamily: "'Arial', sans-serif",
+            fontSize: "14px",
+            color: "#555",
+          }}
+        >
+          &copy; 2024 Auto Create Business Model Canvas. All rights reserved.
         </footer>
       </body>
     </html>
