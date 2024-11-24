@@ -1,17 +1,26 @@
-import Link from 'next/link';
+"use client";
+
+import Link from "next/link";
 import React from "react";
 
 export default function Home() {
+  const buttonStyle: React.CSSProperties = {
+    display: "inline-block",
+    padding: "10px 20px",
+    textAlign: "center",
+    textDecoration: "none",
+    color: "white",
+    backgroundColor: "red",
+    borderRadius: "5px",
+    transition: "background-color 0.3s",
+    cursor: "pointer",
+  };
+
   return (
     <div>
       <nav>
-        <h1 style={{ textAlign: "center" }}>Welcome to the Auto create Business Model Campus</h1>
-        <div style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "16px",
-          marginTop: "20px",
-        }}>
+        <h1>Welcome to the Auto Create Business Model Canvas</h1>
+        <div style={{ display: "flex", gap: "10px" }}>
           <Link href="/home">
             <a style={buttonStyle}>Home</a>
           </Link>
@@ -35,19 +44,3 @@ export default function Home() {
     </div>
   );
 }
-
-const buttonStyle = {
-  display: "inline-block",
-  padding: "10px 20px",
-  textAlign: "center",
-  textDecoration: "none",
-  color: "white",
-  backgroundColor: "#0070f3",
-  borderRadius: "5px",
-  transition: "background-color 0.3s",
-  cursor: "pointer",
-};
-
-buttonStyle[':hover'] = {
-  backgroundColor: "#005bb5",
-};
