@@ -25,8 +25,7 @@ export default function ReviewPage() {
 
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Review Page</h1>
-      <p>以下のボタンをクリックして、ビジネスモデルキャンパスを生成してください。</p>
+      <p>ビジネスモデルキャンパスを生成します</p>
       <button
         onClick={handleGenerateClick}
         disabled={loading}
