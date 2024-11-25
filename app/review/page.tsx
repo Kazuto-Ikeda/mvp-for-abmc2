@@ -34,34 +34,44 @@ export default function ReviewPage() {
   };
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <p>ビジネスモデルキャンパスを生成します</p>
-      <button
-        onClick={handleGenerateClick}
-        disabled={loading}
-        style={{
-          padding: "10px 20px",
-          backgroundColor: loading ? "#ccc" : "#007BFF",
-          color: "#fff",
-          border: "none",
-          borderRadius: "5px",
-          cursor: loading ? "not-allowed" : "pointer",
-          fontSize: "16px",
-        }}
-      >
-        {loading ? "生成中..." : "ビジネスモデルキャンパスを生成"}
-      </button>
-      {generatedContent && (
-        <div style={{ marginTop: "20px", fontSize: "18px", fontWeight: "bold" }}>
-          {generatedContent}
-        </div>
-      )}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        minHeight: "100vh",
+        padding: "20px",
+        textAlign: "center",
+      }}
+    >
+      <div>
+        <p>ビジネスモデルキャンパスを生成します</p>
+        <button
+          onClick={handleGenerateClick}
+          disabled={loading}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: loading ? "#ccc" : "#007BFF",
+            color: "#fff",
+            border: "none",
+            borderRadius: "5px",
+            cursor: loading ? "not-allowed" : "pointer",
+            fontSize: "16px",
+          }}
+        >
+          {loading ? "生成中..." : "ビジネスモデルキャンパスを生成"}
+        </button>
+        {generatedContent && (
+          <div style={{ marginTop: "20px", fontSize: "18px", fontWeight: "bold" }}>
+            {generatedContent}
+          </div>
+        )}
+      </div>
 
       {/* TOPに戻るボタン */}
       <button
         onClick={goToTop}
         style={{
-          marginTop: "40px",
           padding: "10px 20px",
           backgroundColor: "#808080", // グレー
           color: "white",
@@ -69,6 +79,7 @@ export default function ReviewPage() {
           borderRadius: "5px",
           cursor: "pointer",
           fontSize: "16px",
+          marginTop: "40px",
         }}
       >
         TOPに戻る
