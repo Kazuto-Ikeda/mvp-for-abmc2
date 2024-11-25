@@ -26,20 +26,6 @@ export default function PersonaReviewPage() {
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", padding: "20px" }}>
       <h1>Persona Review</h1>
 
-      {/* マインドマップ生成ボタン */}
-      <button
-        onClick={handleMindMapGeneration}
-        style={{
-          padding: "10px 20px",
-          backgroundColor: "#4CAF50",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-      >
-        マインドマップを生成（対象ペルソナのニーズ、ペインポイント、解決手段を生成）
-      </button>
 
       {/* マインドマップから特定項目を選定 */}
       <div style={{ width: "100%", textAlign: "center" }}>
