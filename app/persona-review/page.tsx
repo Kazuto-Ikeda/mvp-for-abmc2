@@ -22,10 +22,14 @@ export default function PersonaReviewPage() {
     router.push("/interview");
   };
 
+  // ハンドラー関数: トップページに戻る
+  const goToTop = () => {
+    router.push("/");
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", padding: "20px" }}>
       <h1>Persona Review</h1>
-
 
       {/* マインドマップから特定項目を選定 */}
       <div style={{ width: "100%", textAlign: "center" }}>
@@ -99,6 +103,22 @@ export default function PersonaReviewPage() {
           インタビューに進む
         </button>
       </div>
+
+      {/* トップページに戻るボタン */}
+      <button
+        onClick={goToTop}
+        style={{
+          marginTop: "40px",
+          padding: "10px 20px",
+          backgroundColor: "#808080", // グレー
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        TOPに戻る
+      </button>
     </div>
   );
 }
