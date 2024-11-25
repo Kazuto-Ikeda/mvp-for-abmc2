@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function PersonaReviewPage() {
   const [selectedDetails, setSelectedDetails] = useState({
@@ -9,20 +10,36 @@ export default function PersonaReviewPage() {
     solutions: "",
   });
 
-  // ハンドラー関数: マインドマップ生成
-  const handleMindMapGeneration = () => {
-    alert("マインドマップを生成しました！（モック機能）");
-  };
+  const router = useRouter(); // ページ遷移用のルーター
 
   // ハンドラー関数: ペルソナ詳細情報生成
   const handlePersonaDetailsGeneration = () => {
     alert("ペルソナの詳細情報を生成しました！（モック機能）");
   };
 
+  // ハンドラー関数: インタビューページに遷移
+  const goToInterview = () => {
+    router.push("/interview");
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", padding: "20px" }}>
       <h1>Persona Review</h1>
 
+      {/* マインドマップ生成ボタン */}
+      <button
+        onClick={handleMindMapGeneration}
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "#4CAF50",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        マインドマップを生成（対象ペルソナのニーズ、ペインポイント、解決手段を生成）
+      </button>
 
       {/* マインドマップから特定項目を選定 */}
       <div style={{ width: "100%", textAlign: "center" }}>
@@ -67,20 +84,35 @@ export default function PersonaReviewPage() {
         </div>
       </div>
 
-      {/* ペルソナの詳細情報生成ボタン */}
-      <button
-        onClick={handlePersonaDetailsGeneration}
-        style={{
-          padding: "10px 20px",
-          backgroundColor: "#008CBA",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-      >
-        ペルソナの詳細情報を生成
-      </button>
+      {/* ペルソナの詳細情報生成ボタンとインタビューに進むボタン */}
+      <div style={{ display: "flex", gap: "10px" }}>
+        <button
+          onClick={handlePersonaDetailsGeneration}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#008CBA",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        >
+          ペルソナの詳細情報を生成
+        </button>
+        <button
+          onClick={goToInterview}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#FF5722",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        >
+          インタビューに進む
+        </button>
+      </div>
     </div>
   );
 }
